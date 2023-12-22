@@ -17,7 +17,7 @@ const LoginForm = () => {
       const user = userCreds.user;
       localStorage.setItem("token", user.accessToken);
       localStorage.setItem("user", JSON.stringify(user));
-      dispatch({ type: "LOGIN", payload: email });
+      dispatch({ type: "LOGIN", payload: user.accessToken });
       window.location.assign("/");
     } catch (err) {
       setError(true);
